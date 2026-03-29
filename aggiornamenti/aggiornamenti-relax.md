@@ -4,9 +4,31 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 15.7.8 - 29 Marzo 2026
+
+**Welcome - Conti Passanti:**
+
+* Aggiunto supporto per i conti passanti nel form di pagamento addebito in camera. È ora disponibile una nuova tab "Conti Passanti" accanto alla tab "Camere", che permette di addebitare direttamente su un conto passante Welcome.
+* I conti passanti vengono caricati in background tramite un thread dedicato e sono visibili solo al primo accesso alla tab.
+
+**Welcome - Salvataggio cliente sul documento (DB 15.7.8):**
+
+* I dati del cliente Welcome (OID, nome, cognome) vengono ora salvati direttamente sul documento al momento dell'addebito in camera (`WelcomeClienteOid`, `WelcomeClienteNome`, `WelcomeClienteCognome`).
+* Il form documento mostra il cliente Welcome associato.
+
+**Welcome - Annullo documento migliorato:**
+
+* L'annullo di un documento Welcome ora usa il cliente salvato direttamente sul documento invece di cercarlo in tempo reale tramite le risorse occupate. Per i documenti salvati con versioni precedenti, viene mantenuto il vecchio comportamento di fallback tramite la camera.
+
+**Scontrino di Cortesia - Stampa:**
+
+* Implementata l'azione "Stampa Scontrino di Cortesia" (`caStampaProforma`): se aggiunta alla sidebar, ora esegue effettivamente la stampa del proforma.
+
+**Tipo Documento - Ricerca Persone:**
+
+* Il campo di ricerca persone nel form selezione tipo documento ora filtra per denominazione, P.IVA e codice fiscale contemporaneamente.
+
 ## Relax 15.7.6 - 22 Marzo 2026
-
-
 
 **Welcome - Annullo addebito:**
 
@@ -294,7 +316,11 @@ Se definisco un secondo criterio, per esempio indicando solo la categoria "Orolo
 ## Relax 14.7.7 - 06 Maggio 2025
 
 * Gestione versamenti tramite Cashlogy, aggiunto un nuovo flag in Impostazioni Pagamenti -> Gestione Versamenti.
-* Invio Mexal Shaker: il documento viene mandato con il campo acconto = 0 (quindi come non pagato)&#x20;  nel caso in in cui per  il tipo di pagamento prevalente usato non é stato previsto un conto cassa corrispondente  &#x20;in impostazioni ECR->Pagamenti. Questo perché per alcune forme di pagamento, per esempio "Bonifico"  in Mexal non si deve considerare il documento come pagato, sará poi per esempio il reparto contabilitá  &#x20;che creera' la scrittura contabile manualmente al ricevimento del bonifico.
+* Invio Mexal Shaker: il documento viene mandato con il campo acconto = 0 (quindi come non pagato)&#x20;
+  nel caso in in cui per  il tipo di pagamento prevalente usato non é stato previsto un conto cassa corrispondente
+  &#x20;in impostazioni ECR->Pagamenti. Questo perché per alcune forme di pagamento, per esempio "Bonifico"
+  in Mexal non si deve considerare il documento come pagato, sará poi per esempio il reparto contabilitá
+  &#x20;che creera' la scrittura contabile manualmente al ricevimento del bonifico.
 * Relax Shaker crea ora il lotto nel caso in cui in corrispondenza di ciascun lotto di riga specificato venga passato il campo "Scadenza". In questo caso Relax controlla se il lotto esista giá in Mexal ed eventualmente lo crea. Da notare che il campo Scadenza deve essere di tipo stringa nel formato previsto da Mexal YYYYMMDD.&#x20;
 
 ## Relax 14.7.5 - 28 Aprile 2025
