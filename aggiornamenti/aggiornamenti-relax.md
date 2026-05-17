@@ -4,15 +4,15 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
-## Relax 15.8.2 - 8 Maggio 2026
+## Relax 15.8.2 - 17 Maggio 2026
 
-**Maggiorazione documento e riga (DB 15.8.2):**
+**Maggiorazione documento e riga:**
 
 * Aggiunte quattro nuove azioni speculari allo Sconto: **Magg. Riga %**, **Magg. Riga €**, **Magg. Doc %**, **Magg. Doc €**. Possono essere inserite nella sidebar della cassa come pulsanti.
-* La maggiorazione può essere applicata a livello di singola riga (percentuale o valore) oppure dopo il subtotale, dove crea una riga "MAGGIORA" collegata che incrementa il totale (specchio della riga SCONTO).
-* La maggiorazione di riga e quella sul documento vengono persistite (`documenti_righe.MaggiorazionePercentuale`, `documenti_righe.MaggiorazioneValore`, `documenti.Maggiorazione`) e mostrate sullo scontrino in cassa accanto allo sconto.
+* La maggiorazione può essere applicata a livello di singola riga (percentuale o valore) oppure dopo il subtotale, dove crea una riga con articolo speciale "MAGGIORA" collegata che incrementa il totale (specchio della riga SCONTO).
+* La maggiorazione di riga e quella sul documento vengono salvate (`documenti_righe.MaggiorazionePercentuale`, `documenti_righe.MaggiorazioneValore`, `documenti.Maggiorazione`) e mostrate sullo scontrino in cassa accanto allo sconto.
 
-**Varianti articolo - Gratuite, sempre a pagamento, ordinamento (DB 15.8.0 e 15.8.1):**
+**Varianti articolo - Gratuite, sempre a pagamento, ordinamento:**
 
 * Aggiunto in anagrafica articoli il campo **Numero di varianti gratuite**: quando si aggiungono varianti a un articolo, le prime N varianti non vengono addebitate.
 * Aggiunto in anagrafica varianti il flag **Sempre a pagamento**: la variante viene sempre addebitata e non rientra nel conteggio delle gratuite.
