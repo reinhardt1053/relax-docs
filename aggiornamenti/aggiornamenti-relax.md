@@ -4,6 +4,47 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 15.8.2 - 8 Maggio 2026
+
+**Maggiorazione documento e riga (DB 15.8.2):**
+
+* Aggiunte quattro nuove azioni speculari allo Sconto: **Magg. Riga %**, **Magg. Riga €**, **Magg. Doc %**, **Magg. Doc €**. Possono essere inserite nella sidebar della cassa come pulsanti.
+* La maggiorazione può essere applicata a livello di singola riga (percentuale o valore) oppure dopo il subtotale, dove crea una riga "MAGGIORA" collegata che incrementa il totale (specchio della riga SCONTO).
+* La maggiorazione di riga e quella sul documento vengono persistite (`documenti_righe.MaggiorazionePercentuale`, `documenti_righe.MaggiorazioneValore`, `documenti.Maggiorazione`) e mostrate sullo scontrino in cassa accanto allo sconto.
+
+**Varianti articolo - Gratuite, sempre a pagamento, ordinamento (DB 15.8.0 e 15.8.1):**
+
+* Aggiunto in anagrafica articoli il campo **Numero di varianti gratuite**: quando si aggiungono varianti a un articolo, le prime N varianti non vengono addebitate.
+* Aggiunto in anagrafica varianti il flag **Sempre a pagamento**: la variante viene sempre addebitata e non rientra nel conteggio delle gratuite.
+* Aggiunto in anagrafica varianti il campo **Ordinamento** (default 1000, coerente con articoli e categorie): controlla l'ordine in cui le varianti appaiono sia nel selettore desktop sia nel mobile.
+* La logica delle varianti gratuite funziona in modo identico sia da desktop (cassa) sia da mobile (Relax Mobile via REST).
+* Il `PadreID` delle righe variante viene ora settato anche dal flusso mobile, allineandolo al desktop. Questo permette di modificare correttamente una comanda creata da mobile e di mantenere il conteggio delle varianti gratuite quando si mescolano i due canali.
+
+**Impostazioni Scontrino - Inserimento articoli solo tramite codice a barre:**
+
+* Nuovo flag in Impostazioni Scontrino. Quando attivo, blocca l'aggiunta di articoli via click su pulsantiera, griglia e PLU; resta possibile aggiungere articoli solo tramite codice a barre digitato o sparato con lettore nel campo di ricerca.
+* Se l'utente prova a cliccare un articolo viene mostrato un messaggio esplicativo.
+
+**Stampa scontrino - Arrotondamento allineato al misuratore fiscale:**
+
+* Risolto un problema di differenze di 1 centesimo tra il totale calcolato da Relax e quello stampato dal misuratore fiscale. Il calcolo dell'importo riga adesso pre-arrotonda a 2 decimali subito dopo `qta × prezzo`, esattamente come fa il misuratore fiscale prima di applicare gli sconti percentuali.
+
+**Listini cliente fuori range:**
+
+* Se l'anagrafica di un cliente contiene un valore di listino fuori dal range supportato (1..9), Relax non genera più l'errore `Field not found : ListinoNN` ma mostra un messaggio chiaro indicando il valore non valido e ripiega sul listino predefinito, lasciando il programma utilizzabile.
+
+**Impostazioni Stampanti - Crash su scroll combo:**
+
+* Risolto il crash che si verificava aprendo le tendine in Impostazioni Stampanti e scorrendo con le frecce. La cascata di eventi `OnChange` che innescava scritture multiple sul file XML ad ogni freccia, e un'eccezione fatale non catturata in caso di stato transitorio, sono state messe in sicurezza.
+
+**Tavoli - Tavolo blu permanente dopo conto separato:**
+
+* Risolto il problema per cui dopo aver chiuso completamente una comanda con conto separato e uscito dal form via "Indietro", il tavolo restava nello stato "occupato" (colore blu). Il tavolo ora torna correttamente libero quando la comanda è stata interamente pagata.
+
+**Produzione automatica - Carico/Scarico Lavorazione duplicati su Mexal:**
+
+* Risolto un bug per cui ad ogni nuovo scontrino con articoli di produzione, Relax rigenerava i file JSON Mexal Shaker anche per i Carico/Scarico Lavorazione degli scontrini precedenti, causando documenti duplicati lato Mexal. Gli scontrini secondari accumulati in memoria vengono ora correttamente liberati tra uno scontrino e l'altro.
+
 ## Relax 15.7.8 - 29 Marzo 2026
 
 **Welcome - Conti Passanti:**
