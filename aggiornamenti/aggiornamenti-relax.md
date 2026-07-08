@@ -4,6 +4,20 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.0.1 - 8 Luglio 2026
+
+**Comandi Esterni - Esecuzione di programmi e script esterni (DB 16.0.1):**
+
+* Nuova sezione **Comandi Esterni** in Impostazioni, dove è possibile configurare fino a **10 comandi esterni**, ciascuno con nome, eseguibile/comando, parametri e cartella di lavoro. Utile ad esempio per lanciare uno script Python o un programma di terze parti direttamente da Relax.
+* Ogni comando configurato può essere assegnato a un pulsante della **sidebar** (in cassa o in comanda) come le altre azioni, da Impostazioni → Aspetto Interfaccia. Il nome scelto per il comando viene usato come etichetta del pulsante.
+* L'esecuzione attende il termine del comando e ne mostra l'esito: conferma in caso di successo, oppure il codice di errore e l'output del programma in caso di problema. Se si preme un pulsante il cui comando non è ancora configurato, viene mostrato un messaggio.
+
+**Pagamenti - Tipo cassetto per-postazione:**
+
+* Il **tipo di cassetto** (Manuale, Cashlogy, VNE, Glory SID, Business Statistics) è ora un'impostazione **locale alla singola postazione** (salvata nel `config.xml`) invece che condivisa nel database.
+* In un'installazione con più postazioni collegate allo stesso database MySQL è quindi finalmente possibile avere, ad esempio, una cassa con incasso manuale e un'altra con cassetto automatico Cashlogy.
+* Le postazioni esistenti non cambiano comportamento: alla prima esecuzione ereditano il cassetto attualmente configurato e possono poi essere impostate singolarmente da Impostazioni → Pagamenti.
+
 ## Relax 15.8.2 - 17 Maggio 2026
 
 **Maggiorazione documento e riga:**
