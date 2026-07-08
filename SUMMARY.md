@@ -23,8 +23,6 @@
 * [Come risolvere errore "MySQL server has gone away"](come-risolvere-errore-mysql-server-has-gone-away.md)
 * [Creazione Lotti Mexal](creazione-lotti-mexal.md)
 
-## Impostazioni
-
 ## Passepartout Mexal <a href="#mexal" id="mexal"></a>
 
 * [Videate Aggiuntive](mexal/videate-aggiuntive.md)
@@ -37,8 +35,6 @@
 * [Relax Shaker Debug](relax-shaker-debug.md)
 
 ## Servizi
-
-***
 
 * [Import Articoli](import-articoli.md)
 
