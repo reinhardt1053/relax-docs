@@ -4,6 +4,36 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.0.4 - 26 Luglio 2026
+
+**Cassa - Chiusura scontrino con un tasto per metodo di pagamento (DB 16.0.2):**
+
+* Le azioni **Contanti, Carta di credito, Assegni, Bancomat, Buoni spesa, Finanziaria, Bonifico e Carta Prepagata** possono ora essere assegnate alla sidebar della cassa (Impostazioni → Aspetto Interfaccia): un tocco chiude lo scontrino corrente saldandolo **per intero** con quel metodo di pagamento.
+* La chiusura riusa il flusso del pannello pagamenti: con POS collegato o cassetto automatico si apre la consueta maschera del terminale/cassetto, che a operazione riuscita conferma da sola lo scontrino. Buoni Spesa apre il pannello pagamenti con il metodo selezionato, come da regole esistenti.
+* Valgono i permessi operatore giá esistenti sulle forme di pagamento.
+* Le etichette delle azioni sono state accorciate al solo nome del metodo (es. "Pagamento Carta di Credito" → "Carta di credito"), piú adatte a un pulsante.
+
+**Comanda - Azione Modifica Quantitá (DB 16.0.3):**
+
+* Nuova azione **Modifica Quantitá** per la sidebar comanda, speculare a Modifica Prezzo: selezionata la riga, si digita la quantitá sul tastierino e si preme il tasto.
+* La quantitá digitata viene arrotondata ai **decimali quantitá** definiti nelle impostazioni; importi e totale vengono ricalcolati preservando l'eventuale sconto riga.
+
+**Cassa - Scorrimento touch e con trascinamento mouse (impostazione locale):**
+
+* Nuova impostazione per postazione "**Scorrimento touch elenchi**" (Impostazioni → Aspetto Interfaccia, salvata nel config.xml locale): categorie, articoli/azioni e scontrino si scorrono **trascinando col dito o col mouse**, come su Android. Sul touch screen il gesto usa le gesture native di Windows con inerzia.
+* Con lo scorrimento attivo gli elenchi non sono piú paginati: si scorrono in modo continuo, con **caricamento progressivo** degli articoli a blocchi durante lo scorrimento (l'apertura di una categoria grande resta immediata). Il catalogo continua a sfogliarsi con lo swipe.
+* Le scrollbar di Windows spariscono, sostituite da un **indicatore sottile stile mobile** che compare solo durante lo scorrimento; raggiunto l'inizio o la fine dell'elenco un **bagliore di overscroll** (come Android) segnala il limite.
+* I tasti freccia di categorie e articoli vengono nascosti (superflui); quelli dello scontrino restano. A impostazione spenta tutto rimane esattamente come prima.
+
+**Promozioni - Flag Locale (DB 16.0.4):**
+
+* Nuovo flag **Locale** sulle promozioni, come giá per gli articoli: le promozioni locali **non vengono eliminate dal sync Mexal**.
+* Le promozioni create manualmente in Relax nascono locali (spunta attiva di default nella scheda promozione); togliendo la spunta la promozione torna a essere sostituita dal sync come le promo importate da Mexal.
+
+**Cassa - Fix paginazione categorie con Articoli Preferiti:**
+
+* Risolto il problema per cui, con l'impostazione Articoli Preferiti attiva, il pulsante "Preferiti" in testa alla prima pagina faceva "sparire" l'ultima categoria della pagina: passando alla pagina successiva un elemento veniva saltato. Ora le categorie per pagina tengono conto del posto occupato dal pulsante Preferiti.
+
 ## Relax 16.0.1 - 8 Luglio 2026
 
 **Comandi Esterni - Esecuzione di programmi e script esterni (DB 16.0.1):**
