@@ -4,6 +4,19 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.0.5 - 28 Luglio 2026
+
+**Statistiche Documenti - Filtro Fidelity Card (DB 16.0.5):**
+
+* Nel popup **Altri Filtri** delle statistiche documenti è ora disponibile il filtro **"Solo Fidelity Card"**: attivandolo, le statistiche considerano solo i documenti emessi a clienti con tessera fidelity. Si combina con tutti gli altri filtri e raggruppamenti (date, operatore, categoria, ecc.).
+* La tessera fidelity del cliente viene ora **consolidata sulla testa del documento** al salvataggio (`documenti.PersonaTessera`), come gli altri dati anagrafici: per i nuovi documenti il filtro riflette quindi la tessera posseduta al momento della vendita.
+* Per i documenti giá esistenti il campo viene valorizzato una tantum dall'aggiornamento DB con la tessera attuale del cliente associato, cosí il filtro è utilizzabile anche sullo storico.
+
+**Impostazioni ECR - Stampa righe con prezzo 0:**
+
+* Nuovo flag **"Stampa righe con prezzo 0"** (Impostazioni → ECR, scheda Stampa): quando attivo, le righe con prezzo 0 (es. omaggi) vengono inviate al misuratore fiscale come righe normali; finora venivano sempre escluse dalla stampa dello scontrino.
+* A flag spento (default) il comportamento resta quello di sempre.
+
 ## Relax 16.0.4 - 26 Luglio 2026
 
 **Cassa - Chiusura scontrino con un tasto per metodo di pagamento (DB 16.0.2):**
