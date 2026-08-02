@@ -4,6 +4,33 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.0.8 - 02 Agosto 2026
+
+**Fatturazione elettronica - Codice TD visibile ovunque:**
+
+* Il campo **Tipo Doc FE** viene ora valorizzato automaticamente al salvataggio anche per i documenti emessi senza scelta esplicita: fatture → TD01 (TD24 se differite), note di credito → TD04, autofatture → TD20 se non diversamente indicato.
+* Per le **fatture ricevute** importate da XML viene salvato il tipo documento reale dichiarato dal fornitore (TD01, TD02, TD24, ecc.).
+* Nella **griglia della maschera Fatturazione Elettronica** la colonna Tipo mostra il codice TD del documento (es. TD01, TD27); per i documenti storici senza codice resta la sigla precedente (FT, FFE, FF, ...).
+* Nella **scheda dettaglio documento**, tab Altro, è visibile il campo "Tipo Doc. FE" in sola lettura.
+
+**Statistiche Documenti - Filtro "Solo documenti con promo":**
+
+* Nel popup **Altri Filtri** è disponibile il nuovo filtro **"Solo documenti con promo"**: mostra i documenti che contengono **almeno una riga in promozione**, considerati con tutte le loro righe (anche quelle non in promo). Si affianca al filtro esistente "Solo articoli promo", che invece considera le sole righe vendute in promozione. Entrambi si combinano con gli altri filtri e raggruppamenti.
+
+**Fix - Tasti "Scontrino", "Fattura", ecc. nella sidebar di gestione (DB 16.0.8):**
+
+* Su alcune installazioni, dopo un aggiornamento da versioni molto vecchie (precedenti alla 10.3.8), le azioni rapide "imposta tipo documento" (Scontrino, Scontrino Parlante, Fattura, Ricevuta Fiscale, Reso Corrispettivo, Annullo) comparivano erroneamente come sezioni della **sidebar in gestione**: venivano create senza il flag Nascondi. L'aggiornamento le nasconde su tutti i database; restano attive e utilizzabili come tasti nelle aree della cassa.
+
+## Relax 16.0.7 - 02 Agosto 2026
+
+**Autofattura da cassa - TD20 e TD27 (DB 16.0.7):**
+
+* Selezionando il tipo documento **Autofattura** in cassa viene ora chiesto il tipo di fattura elettronica da emettere: **TD20** (autofattura per regolarizzazione, intestata al fornitore, flusso invariato) oppure **TD27** (fattura per autoconsumo o cessioni gratuite senza rivalsa).
+* Con **TD27** non viene richiesta la selezione di una persona: il documento viene **intestato automaticamente alla propria azienda** e nell'XML della fattura elettronica cedente e cessionario coincidono con i dati aziendali, come richiesto da SDI (Codice Destinatario 0000000, recapito nel cassetto fiscale).
+* Nuova tabella **fe\_tipi\_documento** con l'elenco completo dei tipi documento della fatturazione elettronica (TD01–TD29) e relativo campo `TipoDocFE` sulla testa del documento: se valorizzato ha precedenza sul tipo derivato dal tipo documento. I documenti esistenti e le autofatture importate da Frantolio restano TD20.
+* Le **autofatture ora scaricano il magazzino**, come gli altri documenti di vendita.
+* L'elenco **Autofatture** in gestione è stato spostato dal menu Documenti Acquisto a **Documenti Vendita**.
+
 ## Relax 16.0.5 - 28 Luglio 2026
 
 **Statistiche Documenti - Filtro Fidelity Card (DB 16.0.5):**
