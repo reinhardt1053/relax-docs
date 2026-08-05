@@ -4,6 +4,24 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.0.9 - 05 Agosto 2026
+
+**Autofattura - Stampa:**
+
+* L'**autofattura è ora stampabile** come gli altri tipi documento, dall'elenco documenti e dalla gestione: la stampa usa la stampante e il report configurati per il tipo documento e le variabili di stampa della fattura.
+* Nuova cartella report **autofattura** con i modelli in stile fattura (predefinito, senza intestazione, con pagamenti, ecc.), personalizzabili e selezionabili da Impostazioni → Stampanti come per gli altri documenti.
+
+**Fatturazione differita - Generazione autofatture:**
+
+* Nella maschera **Genera Fatture** è ora possibile scegliere il **documento da generare**: Fattura oppure **Autofattura**.
+* Il nuovo campo **Tipo Doc FE** propone i codici della fatturazione elettronica in base al documento scelto — **TD24** per le fatture differite, **TD20** (regolarizzazione, default) o **TD27** (autoconsumo) per le autofatture — e il codice selezionato viene salvato sul documento generato.
+* Con **TD27** i documenti generati vengono **intestati automaticamente alla propria azienda**, come in cassa (per SDI cedente e cessionario devono coincidere).
+
+**Anagrafica Articoli - Seconda unità di misura precompilata:**
+
+* Quando la gestione della **seconda unità di misura** è attiva, i nuovi articoli nascono con UM secondaria uguale alla UM principale e **coefficiente 1** già compilati: si modificano solo quando la conversione è realmente diversa, senza doverli digitare a ogni inserimento.
+* Anche su un articolo esistente, indicando la seconda UM il coefficiente viene proposto a **1** se non ancora valorizzato.
+
 ## Relax 16.0.8 - 02 Agosto 2026
 
 **Autofattura da cassa - TD20 e TD27 (DB 16.0.7):**
