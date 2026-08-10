@@ -4,6 +4,26 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.1.0 - 10 Agosto 2026
+
+**Impostazioni Azienda - Orario apertura e chiusura:**
+
+* In **Impostazioni → Azienda** sono disponibili i nuovi campi **Orario apertura** e **Orario chiusura** dell'attività.
+* Se compilati, **precompilano i filtri ora della Verifica di Cassa**: aprendo la maschera, "dall'ora" e "all'ora" propongono l'orario di apertura e chiusura invece dell'intera giornata. Restano comunque modificabili di volta in volta.
+
+**Elenco Documenti - Totale documenti:**
+
+* Accanto all'indicatore di pagina è ora visibile il **numero totale di documenti** dell'elenco (es. "3 di 12 (287 documenti)"). Il totale si aggiorna con la ricerca e con i filtri di visualizzazione.
+
+**Fix - Filtri del tasto Visualizza in Elenco Documenti:**
+
+* Applicando i filtri dal tasto **Visualizza** (date, cliente/fornitore, articolo, pagamento), i **totali in basso** (Imponibile, IVA, Totale Documento), la **pagina** e il **numero di documenti** ora si aggiornano sempre insieme all'elenco.
+
+**Fix - Aggiornamento con piú postazioni:**
+
+* Quando il database è giá stato aggiornato da un'altra postazione e la postazione corrente ha ancora la versione vecchia, Relax ora si avvia in **modalitá minimale** mostrando solo la finestra Info da cui lanciare l'**aggiornamento automatico**, senza piú rischiare errori dovuti allo schema piú nuovo dell'eseguibile.
+* Durante l'esecuzione dell'installer di aggiornamento **Relax ora si chiude da solo**: prima restava aperto e alla riapertura poteva comparire il messaggio "Relax è giá in esecuzione".
+
 ## Relax 16.0.9 - 05 Agosto 2026
 
 **Autofattura - Stampa:**
