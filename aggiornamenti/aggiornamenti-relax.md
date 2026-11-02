@@ -4,6 +4,59 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.1.7 - 02 Novembre 2026
+
+**Ristorante - Destinazione Unica Asporto:**
+
+* In **Impostazioni → Ristorante**, scheda **Generali**, è disponibile la nuova casella **Destinazione Unica Asporto** con l'elenco delle destinazioni di stampa configurate.
+* Scegliendo una destinazione, le comande delle sale di tipo **Asporto** e **Asporto Veloce** vengono stampate **per intero su quella destinazione**, ignorando le destinazioni impostate su categorie e articoli. Vale sia per le comande prese da PC sia per quelle inviate da **Relax Mobile**.
+* Lasciando la casella vuota non cambia nulla: le comande da asporto vengono smistate sulle varie destinazioni come nelle altre sale.
+* Con il flag **Stampa Comanda Asporto Grafica** attivo, le comande prese da PC nelle sale di tipo Asporto continuano a usare la stampa grafica e non risentono della nuova impostazione.
+
+## Relax 16.1.6 - 20 Ottobre 2026
+
+**Cassa - Ricerca articoli anche per codice fornitore:**
+
+* La ricerca articoli in fase cassa trova ora gli articoli anche per **Codice Fornitore**, oltre che per descrizione, senza dover usare il prefisso **$**.
+
+**Fix - Mov. di Carico e Mov. di Scarico:**
+
+* Le maschere **Mov. di Carico** e **Mov. di Scarico** (movimenti di magazzino) si aprono di nuovo correttamente: il calcolo del numero di pagine dell'elenco generava un errore.
+
+## Relax 16.1.5 - 04 Ottobre 2026
+
+**Fix - Coperti delle comande da Relax Mobile:**
+
+* I coperti del tavolo non vengono piú azzerati quando dal tablet si inviano le comande successive alla prima: il numero di coperti viene ora ricalcolato dalle righe COPERTO presenti nella comanda. Sui tavoli giá interessati dal problema il valore si corregge da solo al primo invio successivo.
+
+**Fix - Documenti da Relax Mobile nella Verifica di Cassa:**
+
+* I documenti creati da Relax Mobile vengono ora inclusi nella **Verifica di Cassa** e negli elenchi filtrati per data e ora, da cui prima restavano esclusi.
+
+**Visore ECR:**
+
+* Il totale da pagare mostrato sul visore dell'ECR è ora preceduto dalla scritta **TOTALE**.
+
+## Relax 16.1.4 - 03 Settembre 2026
+
+**Cassa - Totale da pagare sul visore ECR:**
+
+* Quando si passa al **pagamento** dello scontrino, con il registratore telematico (ECR) attivo il **totale da pagare** viene ora mostrato anche sul visore dell'ECR.
+
+## Relax 16.1.3 - 27 Agosto 2026
+
+**Impostazioni Aspetto Interfaccia - Consenti ridimensionamento finestra:**
+
+* Nuovo flag **Consenti ridimensionamento finestra** in **Impostazioni → Aspetto Interfaccia**, scheda Generale. L'impostazione vale per tutte le postazioni.
+* Con il flag spento, che è l'impostazione predefinita, il tasto della cassa per passare da tutto schermo a finestra resta visibile ma **disattivato**: per usarlo bisogna attivare il flag.
+
+## Relax 16.1.2 - 22 Agosto 2026
+
+**Fix - Comande da Relax Mobile perse o duplicate:**
+
+* La comanda inviata da **Relax Mobile** viene ora stampata **dopo** essere stata salvata: un errore di stampa, o un nuovo invio dal palmare mentre la stampa era in corso, non può piú far perdere la comanda (stampata in cucina ma non salvata) né crearne dei duplicati.
+* Se la stampa non riesce, la comanda resta comunque salvata e si può ristampare dalla cassa.
+
 ## Relax 16.1.0 - 10 Agosto 2026
 
 **Impostazioni Azienda - Orario apertura e chiusura:**
