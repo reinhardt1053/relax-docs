@@ -4,6 +4,14 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.1.8 - 09 Novembre 2026
+
+**Ristorante - Stampa componenti in comanda:**
+
+* Nuovo flag **Stampa componenti in comanda** in **Impostazioni → Ristorante**, scheda **Ulteriori Personalizzazioni**. L'impostazione vale per tutte le postazioni ed è spenta di default.
+* Con il flag attivo, sotto ogni articolo della comanda vengono stampati i suoi **componenti**, cioè gli articoli inseriti nella scheda **Produzione** dell'articolo: uno per riga, con la sola descrizione preceduta da **#**, prima delle eventuali varianti. Ad esempio sotto **Bowl di Sushi** compaiono le righe **# Riso** e **# Salmone**.
+* Vale sia per le comande prese da PC sia per quelle inviate da **Relax Mobile**. Con il flag **Stampa Comanda Asporto Grafica** attivo, le comande prese da PC nelle sale di tipo Asporto continuano a usare la stampa grafica, che non riporta i componenti.
+
 ## Relax 16.1.7 - 02 Novembre 2026
 
 **Ristorante - Destinazione Unica Asporto:**
