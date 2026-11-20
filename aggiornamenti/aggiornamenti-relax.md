@@ -4,6 +4,18 @@ description: In questa sezioni trovi un log di tutti i cambiamenti fatti a Relax
 
 # 🆕 Aggiornamenti Relax
 
+## Relax 16.1.9 - 20 Novembre 2026
+
+**Elenco Documenti - Totali dell'articolo filtrato:**
+
+* In **Gestione → Documenti**, filtrando l'elenco per articolo dal tasto **Visualizza**, sopra la barra dei totali compare una nuova barra con il **nome dell'articolo** e, subito sotto, i totali delle sole righe di quell'articolo: **quantità**, **imponibile**, **IVA** e **totale**.
+* I totali sono calcolati su tutti i documenti filtrati, non solo sulla pagina visibile, e si aggiornano insieme all'elenco anche quando si usa la casella di ricerca. Scegliendo **Tutti gli articoli** la barra scompare.
+* Gli importi sono quelli delle righe dell'articolo, già al netto degli sconti di riga. Gli sconti fatti sul totale del documento non vengono ripartiti sulle righe: in quei documenti il totale dell'articolo può risultare più alto dell'importo effettivamente incassato.
+
+**Ristorante - Componenti in comanda con carattere più piccolo:**
+
+* Con il flag **Stampa componenti in comanda** attivo, i componenti stampati sotto ogni articolo usano ora un carattere **più piccolo di 2 punti** rispetto a quello dell'articolo.
+
 ## Relax 16.1.8 - 09 Novembre 2026
 
 **Ristorante - Stampa componenti in comanda:**
